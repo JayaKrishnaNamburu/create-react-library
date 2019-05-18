@@ -2,22 +2,23 @@
  * @class ExampleComponent
  */
 
-import React, { Component } from 'react'
-
-import styles from './styles.css'
+import React from 'react'
+import styled from '@emotion/styled';
 
 export type Props = { text: string }
 
-export default class ExampleComponent extends Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
+const ExampleComponent: React.FC<Props> = ({ text }) => {
+  return (
+    <Wrapper>
+      Example Component { text }
+    </Wrapper>
+  )
 }
+
+const Wrapper = styled.div`
+  margin: 10px;
+  border; 10px solid; 
+`;
+
+export default ExampleComponent;
+
